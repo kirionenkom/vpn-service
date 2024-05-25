@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShieldVPN | Registration</title>
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='logo.ico') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+<header>
+    <img src="{{ url_for('static', filename='logo.png') }}" alt="logo">
+    <h1>ShieldVPN</h1>
+</header>
+<div class="container">
+    <div class="wrapper"></div>
+    <h2>Registration</h2>
+    <form action="/register" method="post">
+        <label for="username">
+            Username
+            <input type="text" id="username" name="username" pattern=".{8,}" title="Username must be at least 8 characters long" required>
+        </label>
+        <label for="password">
+            Password
+            <input type="password" id="password" name="password" pattern=".{10,}" title="Password must be at least 10 characters long" required>
+        </label>
+        <button type="submit">Register</button>
+    </form>
+    <p>Already have an account? <a href="/login">Login</a></p>
+</div>
+</body>
+</html>

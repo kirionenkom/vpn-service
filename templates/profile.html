@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShieldVPN | Profile</title>
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='logo.ico') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+<header>
+    <img src="{{ url_for('static', filename='logo.png') }}" alt="logo">
+    <h1>ShieldVPN</h1>
+</header>
+<div class="container">
+    <h2>Welcome, {{ user.username }}!</h2>
+    <p>Follow the <a href="https://www.wireguard.com/install/" target="_blank">link</a>, download and install the
+        Wireguard client for your operating system. Also download your connection config and import it. Enjoy safety!
+    </p>
+    <form action="/config" method="post">
+        <input type="hidden" name="button_data" value="some_data">
+        <button type="submit">Download config</button>
+    </form>
+</div>
+</body>
+</html>
